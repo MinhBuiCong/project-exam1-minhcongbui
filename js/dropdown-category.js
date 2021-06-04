@@ -10,7 +10,3 @@ function categoryDrop() {
     dropdown.innerHTML = `<p>Categories &uarr;</p>`;
   }
 }
-
-function categorySelection() {
-  console.log("hello knapp :>> ");
-}

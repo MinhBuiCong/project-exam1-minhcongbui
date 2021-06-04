@@ -45,7 +45,7 @@ getUrl();
 function createCategoryButtons(postCategories) {
   for (let i = 0; i < postCategories.length; i++) {
     categoriesName.innerHTML += `
-    <button class="category-button" onclick="categorySelection('${postCategories[i].id}')">${postCategories[i].name}</button>`;
+    <button class="category-button">${postCategories[i].name}</button>`;
   }
 }
 
