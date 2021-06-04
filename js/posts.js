@@ -1,6 +1,9 @@
 const postUrl =
   " https://royals-shop.com/techblog/wp-json/wp/v2/posts?per_page=14";
+const postCategories =
+  " https://royals-shop.com/techblog/wp-json/wp/v2/categories?per_page=100";
 const blogContainer = document.querySelector(".blog-container");
+const categoriesContainer = document.querySelector(".categories-container");
 const posts = document.querySelector(".posts");
 const bigCard = document.querySelector(".big-card");
 const smallCardContainer = document.querySelector(".small-card-section");
@@ -10,12 +13,10 @@ let data;
 
 async function getUrl() {
   try {
-    const responsePosts = await fetch(postUrl, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const responsePosts = await fetch(postUrl);
+    const responseCategories = await fetch(postCategories);
     const postData = await responsePosts.json();
+    const categoriesData = await responseCategories.json();
     data = postData.map(function (data, index) {
       return {
         id: index,
@@ -28,6 +29,7 @@ async function getUrl() {
       };
     });
     createPosts(data);
+    createCategoryButtons(categoriesData);
   } catch (error) {
     blogContainer.innerHTML = `<h1> Something is not right</h1>`;
     console.log("error :>> ", error);
@@ -35,6 +37,10 @@ async function getUrl() {
 }
 
 getUrl();
+
+function createCategoryButtons(categoriesData) {
+  categoriesContainer.innerHTML += `<button class="btn active" onclick="filterSelection('all')"></button>`;
+}
 
 function createPosts(data) {
   for (let i = 0; i < data.length; i++) {
