@@ -54,6 +54,10 @@ main {
   margin-bottom: 100px;
 }
 
+.category-priority {
+  display: flex;
+}
+
 .category-button {
   margin: 0px 5px 5px 0px;
   border: none;
@@ -67,7 +71,7 @@ main {
 }
 
 .category-button:hover {
-  background-color: #ddd;
+  opacity: 0.5;
 }
 
 .category-button.show {
@@ -77,9 +81,20 @@ main {
 
 .show-all-categories {
   display: none;
-  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
   cursor: pointer;
-  width: 80%;
+  margin-bottom: 5px;
+  background-color: #18b6fb;
+  color: #1d2934;
+  border-radius: 5px;
+  padding: 12px 16px;
+  border: none;
+}
+
+.show-all-categories:hover {
+  opacity: 0.5;
 }
 
 /* Post container  */
@@ -395,6 +410,14 @@ main {
   .introduction-content {
     margin-bottom: 80px;
   }
+
+  .categories-container {
+    margin-bottom: 80px;
+  }
+
+  .category-button {
+    font-size: 0.8rem;
+  }
   .page-title {
     margin: 80px 0px 10px 0px;
     font-size: 1.5rem;
@@ -498,6 +521,8 @@ main {
 
   .categories-container {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
   }
 
   .show-all-categories {
@@ -563,6 +588,16 @@ main {
     font-size: 0.6rem;
     width: 90%;
     text-align: center;
+  }
+
+  .categories-container {
+    width: 90vw;
+  }
+  .category-button {
+    font-size: 0.7rem;
+  }
+  .show-all-categories {
+    font-size: 0.7rem;
   }
   .posts {
     width: 90%;

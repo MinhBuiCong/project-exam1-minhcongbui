@@ -100,7 +100,3 @@ function buttonViewMore(smallCard, totalCard) {
     viewMore.style.display = "none";
   }
 }
-
-function categorySelection() {
-  console.log("filter :>> ");
-}

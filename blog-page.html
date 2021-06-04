@@ -95,11 +95,13 @@
         </div>
       </div>
       <div class="categories-container">
-        <button class="category-button show" onclick="categorySelection('all')">
-          Show all
-        </button>
-        <div class="show-all-categories">
-          <p>Categories &darr;</p>
+        <div class="category-priority">
+          <button class="category-button show" onclick="categorySelectionAll()">
+            Show all
+          </button>
+          <button class="show-all-categories" onclick="categoryDrop()">
+            <p>Categories &darr;</p>
+          </button>
         </div>
         <div class="categories-name"></div>
       </div>
@@ -163,5 +165,6 @@
     </footer>
     <script src="js/navbar.js"></script>
     <script src="js/posts.js"></script>
+    <script src="js/dropdown-category.js"></script>
   </body>
 </html>
