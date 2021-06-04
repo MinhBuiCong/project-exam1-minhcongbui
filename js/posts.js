@@ -27,6 +27,7 @@ async function getUrl() {
         slug: data.slug,
         description: data.excerpt,
         date: convertDate(data),
+        categories: data.categories,
       };
     });
     createPosts(data);
@@ -43,14 +44,14 @@ function createCategoryButtons(categoriesData) {
   console.log("categoriesData :>> ", categoriesData);
   for (let i = 0; i < categoriesData.length; i++) {
     categoriesContainer.innerHTML += `
-    <button class="category-button" onclick="categorySelection('${categoriesData[i].slug}')">${categoriesData[i].slug}</button>`;
+    <button class="category-button" onclick="categorySelection('${categoriesData[i].id}')">${categoriesData[i].slug}</button>`;
   }
 }
 
 function createPosts(data) {
   for (let i = 0; i < data.length; i++) {
     var cards = `
-                      <div class="image-content">
+                      <div class="image-content ${data[i].categories}">
                       <img class="background-image"src="${data[i].image}" alt="${data[i].slug}" ></img>
                       <div class="publication-details">
                       <a href="../blog-detail.html?id=${data[i].link}" class="author">Author: Minh Cong Bui</a>
