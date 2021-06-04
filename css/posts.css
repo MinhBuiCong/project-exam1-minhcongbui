@@ -47,6 +47,32 @@ main {
   text-shadow: black 0px 0px 3px;
 }
 
+/* categories container */
+
+.categories-container {
+  width: 80%;
+  margin: 0px auto 100px auto;
+}
+
+.category-button {
+  margin: 5px;
+  border: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  width: auto;
+  height: 40px;
+}
+
+.category-button:hover {
+  background-color: #ddd;
+}
+
+.category-button.pressed {
+  background-color: #666;
+  color: white;
+}
+
 /* Post container  */
 
 .posts {

@@ -16,6 +16,7 @@ async function getUrl() {
     const responsePosts = await fetch(postUrl);
     const responseCategories = await fetch(postCategories);
     const postData = await responsePosts.json();
+    console.log("postData :>> ", postData);
     const categoriesData = await responseCategories.json();
     data = postData.map(function (data, index) {
       return {
@@ -39,27 +40,31 @@ async function getUrl() {
 getUrl();
 
 function createCategoryButtons(categoriesData) {
-  categoriesContainer.innerHTML += `<button class="btn active" onclick="filterSelection('all')"></button>`;
+  console.log("categoriesData :>> ", categoriesData);
+  for (let i = 0; i < categoriesData.length; i++) {
+    categoriesContainer.innerHTML += `
+    <button class="category-button" onclick="categorySelection('${categoriesData[i].slug}')">${categoriesData[i].slug}</button>`;
+  }
 }
 
 function createPosts(data) {
   for (let i = 0; i < data.length; i++) {
     var cards = `
-                    <div class="image-content">
-                    <img class="background-image"src="${data[i].image}" alt="${data[i].slug}" ></img>
-                    <div class="publication-details">
-                    <a href="../blog-detail.html?id=${data[i].link}" class="author">Author: Minh Cong Bui</a>
-                    <span class="date">Published: ${data[i].date}</span>
-                    </div>
-                    </div>
-                    <div class="post-content">
-                    <h2 class="card-title">${data[i].title["rendered"]}</h2>
-                    <h3 class="card-subtitle">sub-title</h3>
-                    <p class="card-description">${data[i].description["rendered"]}</p>
-                    <div class="card-action">
-                    <a href="../blog-detail.html?id=${data[i].link}">Read more &rarr;</a>
-                    </div>
-                    </div>`;
+                      <div class="image-content">
+                      <img class="background-image"src="${data[i].image}" alt="${data[i].slug}" ></img>
+                      <div class="publication-details">
+                      <a href="../blog-detail.html?id=${data[i].link}" class="author">Author: Minh Cong Bui</a>
+                      <span class="date">Published: ${data[i].date}</span>
+                      </div>
+                      </div>
+                      <div class="post-content">
+                      <h2 class="card-title">${data[i].title["rendered"]}</h2>
+                      <h3 class="card-subtitle">sub-title</h3>
+                      <p class="card-description">${data[i].description["rendered"]}</p>
+                      <div class="card-action">
+                      <a href="../blog-detail.html?id=${data[i].link}">Read more &rarr;</a>
+                      </div>
+                      </div>`;
     if (i === 0) {
       bigCard.innerHTML = cards;
     }
