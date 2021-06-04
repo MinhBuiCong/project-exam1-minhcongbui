@@ -5,12 +5,12 @@ const urlCategories =
 
 const blogContainer = document.querySelector(".blog-container");
 const categoriesContainer = document.querySelector(".categories-container");
+const categoriesName = document.querySelector(".categories-name");
 const posts = document.querySelector(".posts");
 const bigCard = document.querySelector(".big-card");
 const smallCardContainer = document.querySelector(".small-card-section");
 const viewMore = document.querySelector(".view-more");
 const button = document.querySelector(".category-button");
-
 const itemContent = 10;
 let data;
 
@@ -44,7 +44,7 @@ getUrl();
 
 function createCategoryButtons(postCategories) {
   for (let i = 0; i < postCategories.length; i++) {
-    categoriesContainer.innerHTML += `
+    categoriesName.innerHTML += `
     <button class="category-button" onclick="categorySelection('${postCategories[i].id}')">${postCategories[i].name}</button>`;
   }
 }
@@ -102,5 +102,5 @@ function buttonViewMore(smallCard, totalCard) {
 }
 
 function categorySelection() {
-  button.style.color = "red";
+  console.log("filter :>> ");
 }
