@@ -1,23 +1,25 @@
 const postUrl =
   " https://royals-shop.com/techblog/wp-json/wp/v2/posts?per_page=14";
-const postCategories =
+const urlCategories =
   " https://royals-shop.com/techblog/wp-json/wp/v2/categories?per_page=100";
+
 const blogContainer = document.querySelector(".blog-container");
 const categoriesContainer = document.querySelector(".categories-container");
 const posts = document.querySelector(".posts");
 const bigCard = document.querySelector(".big-card");
 const smallCardContainer = document.querySelector(".small-card-section");
 const viewMore = document.querySelector(".view-more");
+const button = document.querySelector(".category-button");
+
 const itemContent = 10;
 let data;
 
 async function getUrl() {
   try {
     const responsePosts = await fetch(postUrl);
-    const responseCategories = await fetch(postCategories);
+    const responseCategories = await fetch(urlCategories);
     const postData = await responsePosts.json();
-    console.log("postData :>> ", postData);
-    const categoriesData = await responseCategories.json();
+    const postCategories = await responseCategories.json();
     data = postData.map(function (data, index) {
       return {
         id: index,
@@ -31,7 +33,7 @@ async function getUrl() {
       };
     });
     createPosts(data);
-    createCategoryButtons(categoriesData);
+    createCategoryButtons(postCategories);
   } catch (error) {
     blogContainer.innerHTML = `<h1> Something is not right</h1>`;
     console.log("error :>> ", error);
@@ -40,11 +42,10 @@ async function getUrl() {
 
 getUrl();
 
-function createCategoryButtons(categoriesData) {
-  console.log("categoriesData :>> ", categoriesData);
-  for (let i = 0; i < categoriesData.length; i++) {
+function createCategoryButtons(postCategories) {
+  for (let i = 0; i < postCategories.length; i++) {
     categoriesContainer.innerHTML += `
-    <button class="category-button" onclick="categorySelection('${categoriesData[i].id}')">${categoriesData[i].slug}</button>`;
+    <button class="category-button" onclick="categorySelection('${postCategories[i].id}')">${postCategories[i].name}</button>`;
   }
 }
 
@@ -98,4 +99,8 @@ function buttonViewMore(smallCard, totalCard) {
     smallCard[i].classList.remove("hidden");
     viewMore.style.display = "none";
   }
+}
+
+function categorySelection() {
+  button.style.color = "red";
 }
