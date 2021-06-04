@@ -1,0 +1,582 @@
+main {
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+/* image content top */
+
+.introduction-content {
+  background-image: url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.introduction-layer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(53, 53, 53, 0.705);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-title {
+  margin: 100px 0px 20px 0px;
+  color: white;
+  font-size: 2rem;
+  text-shadow: black 0px 0px 3px;
+}
+
+.page-subtitle {
+  margin-bottom: 100px;
+  color: white;
+  font-size: 1rem;
+  text-shadow: black 0px 0px 3px;
+}
+
+/* Post container  */
+
+.posts {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.view-more {
+  width: fit-content;
+  font-size: 1rem;
+  margin-bottom: 100px;
+  padding: 10px;
+  color: #1d2934;
+  background-color: #ecad24;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
+}
+
+.view-more:hover {
+  background-color: #18b6fb;
+}
+
+/*Styling of big card*/
+
+.big-card {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
+  background-color: white;
+  margin-bottom: 100px;
+  border-radius: 5px;
+  width: 100%;
+  height: fit-content;
+}
+.big-card .image-content {
+  width: 50%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.big-card:hover .background-image {
+  transform: scale(1.1);
+  object-fit: cover;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  z-index: -1;
+}
+
+.big-card .post-content::before {
+  content: "";
+  width: 35px;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  z-index: 10;
+  transform: skewX(-2deg);
+}
+
+.big-card .post-content {
+  background-color: white;
+  padding: 20px 30px;
+  position: relative;
+  flex-basis: 80%;
+}
+
+.big-card .card-title {
+  margin: 20px 0px 20px 0px;
+  font-size: 1.5rem;
+  color: #1d2934;
+}
+
+.big-card .card-subtitle {
+  font-size: 1.3rem;
+  color: #1d2934;
+  margin-bottom: 20px;
+}
+
+.big-card .card-description {
+  color: rgb(61, 61, 61);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 1rem;
+}
+.big-card .card-action {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.big-card .card-action a {
+  color: #1d2934;
+  text-decoration: none;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
+}
+
+/* Styling of small-cards*/
+
+.small-card-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 100px;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.small-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.small-card .image-content {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 5px 5px 0px 0px;
+  height: 300px;
+}
+
+.small-card:hover .background-image {
+  transform: scale(1.1);
+  position: absolute;
+  height: 100%;
+}
+
+.small-card .post-content {
+  background-color: white;
+  padding: 20px 20px;
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+
+.small-card .card-title {
+  margin-bottom: 20px;
+  padding: 2px;
+  font-size: 1rem;
+  color: #1d2934;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.small-card .card-subtitle {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #1d2934;
+  margin-bottom: 20px;
+}
+
+.small-card .card-description {
+  color: rgb(30, 30, 31);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.small-card .card-action {
+  text-align: right;
+  font-weight: bold;
+}
+
+.small-card .post-content a {
+  font-size: 0.9rem;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #1d2934;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+/*Styling of both cards*/
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  transition: transform 4s;
+}
+
+.publication-details {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(38, 50, 61, 0.322),
+    rgba(18, 22, 24, 0.658)
+  );
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform 1.5s;
+}
+
+.big-card:hover .publication-details,
+.small-card:hover .publication-details {
+  transform: translateX(0);
+}
+
+.big-card:hover .author,
+.big-card:hover .date,
+.small-card:hover .author,
+.small-card:hover .date {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.author {
+  transform: translateY(-30px);
+  opacity: 0;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: all 0.5s;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
+}
+.date {
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.5s;
+  display: block;
+  font-size: 1rem;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
+}
+
+.author:hover {
+  color: rgba(255, 255, 255, 0.515);
+}
+
+.card-action a {
+  position: relative;
+}
+
+.card-action a:hover {
+  color: #18b6fb;
+}
+
+.card-action a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #1d2934;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
+}
+
+.card-action a:hover::before {
+  transform: scaleX(1);
+  background-color: #18b6fb;
+}
+@media screen and (max-width: 1400px) {
+  .small-card-section {
+    gap: 100px 90px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .small-card-section {
+    gap: 100px 80px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .introduction-content {
+    margin-bottom: 80px;
+  }
+  .page-title {
+    margin: 80px 0px 10px 0px;
+    font-size: 1.5rem;
+  }
+  .page-subtitle {
+    margin-bottom: 80px;
+    font-size: 0.8rem;
+  }
+  .posts {
+    margin-bottom: 80px;
+  }
+  .view-more {
+    font-size: 0.8rem;
+    margin-bottom: 80px;
+    padding: 10px;
+  }
+  .big-card {
+    margin-bottom: 80px;
+    height: fit-content;
+  }
+  .big-card .image-content {
+    height: auto;
+    width: 50%;
+  }
+  .big-card .background-image {
+    width: 100%;
+  }
+  .big-card .post-content {
+    padding: 10px 20px;
+    height: fit-content;
+  }
+  .big-card .post-content::before {
+    width: 25px;
+  }
+
+  .big-card .card-title {
+    margin: 0px 0px 10px 0px;
+    font-size: 1rem;
+  }
+  .big-card .card-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .big-card .card-description {
+    font-size: 0.8rem;
+  }
+  .big-card .card-action {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .big-card .card-action {
+    font-size: 0.8rem;
+  }
+  .small-card-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+  .small-card .post-content {
+    padding: 10px 10px;
+  }
+  .small-card .card-title {
+    margin-bottom: 10px;
+  }
+  .small-card .card-subtitle {
+    margin-bottom: 10px;
+  }
+
+  .small-card .card-description {
+    margin-bottom: 10px;
+  }
+  .small-card .post-content a {
+    font-size: 0.8rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .publication-details {
+    padding: 10px;
+  }
+  .author {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
+  .date {
+    font-size: 0.8rem;
+  }
+  .card-action a::before {
+    height: 2px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .introduction-content {
+    margin-bottom: 50px;
+  }
+  .page-title {
+    margin: 50px 0px 10px 0px;
+  }
+  .page-subtitle {
+    margin-bottom: 50px;
+  }
+  .posts {
+    margin-bottom: 50px;
+  }
+  .view-more {
+    margin-bottom: 50px;
+  }
+  .big-card {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .big-card .image-content {
+    height: 30vh;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .big-card:hover .background-image {
+    width: 100%;
+  }
+  .big-card .post-content::before {
+    width: 0px;
+  }
+  .big-card .post-content {
+    padding: 10px;
+    height: 40vh;
+  }
+  .small-card-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .small-card {
+    height: fit-content;
+  }
+
+  .small-card .image-content {
+    height: 30vh;
+  }
+  .small-card:hover .background-image {
+    width: 100%;
+  }
+  .small-card .post-content {
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 600px) {
+  .page-title {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    text-align: center;
+    width: 90%;
+  }
+  .page-subtitle {
+    font-size: 0.6rem;
+    width: 90%;
+    text-align: center;
+  }
+  .posts {
+    width: 90%;
+  }
+  .view-more {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  .big-card .image-content {
+    height: 20vh;
+  }
+  .big-card .post-content {
+    padding: 5px 10px;
+  }
+  .big-card .card-title {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+  }
+  .big-card .card-subtitle {
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+  }
+  .big-card .card-description {
+    font-size: 0.6rem;
+  }
+  .big-card .card-action {
+    margin-top: 5px;
+  }
+  .big-card .card-action {
+    font-size: 0.8rem;
+  }
+  .small-card .image-content {
+    height: 20vh;
+  }
+  .small-card .post-content {
+    padding: 5px 10px;
+  }
+  .small-card .card-title {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+  }
+  .small-card .card-subtitle {
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+  }
+  .small-card .card-description {
+    margin-bottom: 5px;
+    font-size: 0.6rem;
+  }
+  .small-card .post-content a {
+    margin-right: 0px;
+  }
+  .publication-details {
+    padding: 5px;
+  }
+  .author {
+    margin-bottom: 5px;
+    font-size: 0.6rem;
+  }
+  .date {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 400px) {
+}
